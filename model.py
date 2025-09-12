@@ -3,10 +3,11 @@ import base64
 import google.generativeai as genai
 from PIL import Image
 import io
+import key
 
 # Configure the Gemini client
 try:
-    genai.configure(api_key="AIzaSyCwEqNelbtwi7y6_SWz2_QrZ6EqU4rDTvw")
+    genai.configure(api_key= key )
 except Exception as e:
     print(f"Error configuring Gemini API: {e}")
     exit()
