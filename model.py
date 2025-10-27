@@ -5,7 +5,7 @@ import io
 # Configure the Generative AI API (Make sure you have your API key set as an environment variable)
 genai.configure(api_key="AIzaSyCwEqNelbtwi7y6_SWz2_QrZ6EqU4rDTvw")
 
-def get_gemini_analysis(image_bytes):
+def get_gen_analysis(image_bytes):
     try:
         img = Image.open(io.BytesIO(image_bytes))
 
@@ -41,7 +41,7 @@ def get_gemini_analysis(image_bytes):
         print(f"Gemini API error (image analysis): {str(e)}")
         return f"<h3>Error</h3><p>Could not analyze the image. The API call failed.</p><p><b>Details:</b> {str(e)}</p>"
 
-def get_gemini_chat_response(message, history=None):
+def get_gen_chat_response(message, history=None):
     try:
         # Initialize the Gemini model for text-only tasks
         chat_model = genai.GenerativeModel("gemini-1.5-flash")
